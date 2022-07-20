@@ -3,6 +3,7 @@ $("#currentDay").text(today.format("dddd MMM Do, YYYY"));
 
 var currentHour = moment().format("HH")
 
+//calls to the description class from the html using jquery. 
 $(".description").each(function(){
 var id = $(this).attr("id").split("-")[1]
 if(currentHour>id){
@@ -21,7 +22,9 @@ var text = $(this).siblings("textarea").val()
 var id = $(this).siblings("textarea").attr("id")
 localStorage.setItem(id, text)
 }
+//click event
 $(".btn").click(saveHandler)
+//stores value to local storage
 $("#hour-09").val(localStorage.getItem("hour-09"))
 $("#hour-10").val(localStorage.getItem("hour-10"))
 $("#hour-11").val(localStorage.getItem("hour-11"))
